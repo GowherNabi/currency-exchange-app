@@ -1,6 +1,10 @@
 .exchange-rates-table {
-  margin-top: 20px;
+  // margin-top: 20px;
   overflow-x: auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 
   table {
     width: 100%;
@@ -15,7 +19,7 @@
     }
 
     th {
-      background-color: #f2f2f2;
+      background-color: #e0e7ff;
       font-weight: bold;
     }
 
@@ -25,10 +29,13 @@
   }
   .sort-icon {
     margin-left: 4px;
-    font-size: 0.8em;
+    font-size: 1em;
     display: inline-block;
     width: 1em;
     transition: transform 0.2s ease;
+    top: -2px;
+    position: relative;
+    color: blue;
   }
 
   th {

@@ -34,7 +34,7 @@ export class ExchangeRatesTableComponent {
   targetCurrencies = input<string[]>([]);
 
   // Track sorting state
-  currentSortColumn: string | null = null;
+  currentSortColumn: string | null = 'date';
   currentSortDirection: 'asc' | 'desc' = 'asc';
 
   // Output for sort events
