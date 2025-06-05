@@ -3,19 +3,24 @@
 
   <div class="controls-container">
     <!-- Date Filter -->
-    <app-date-selector
-      [selectedDate]="endDate()"
-      (selectedDateChange)="onDateChange($event)"
-    >
-    </app-date-selector>
+    <div class="date-selector">
+      <app-date-selector
+        [selectedDate]="endDate()"
+        (selectedDateChange)="onDateChange($event)"
+      >
+      </app-date-selector>
+    </div>
+
     <!-- Currency Selector -->
-    <app-currency-selector
-      [baseCurrency]="baseCurrency()"
-      [selectedCurrencies]="targetCurrencies()"
-      (baseCurrencyChange)="onBaseCurrencyChange($event)"
-      (selectedCurrenciesChange)="onSelectedCurrenciesChange($event)"
-    >
-    </app-currency-selector>
+    <div class="currency-selector">
+      <app-currency-selector
+        [baseCurrency]="baseCurrency()"
+        [selectedCurrencies]="targetCurrencies()"
+        (baseCurrencyChange)="onBaseCurrencyChange($event)"
+        (selectedCurrenciesChange)="onSelectedCurrenciesChange($event)"
+      >
+      </app-currency-selector>
+    </div>
   </div>
 
   @if (loading()) {

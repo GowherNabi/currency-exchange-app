@@ -1,15 +1,21 @@
 .currency-selector {
   flex: 1;
-  min-width: 300px;
+  // min-width: 300px;
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 5px;
   background-color: #f9f9f9;
+  display: flex;
+  gap: 1em;
+  label {
+    font-weight: bold;
+  }
+  // width: 55em;
 }
 
 .base-currency-selector {
-  margin-bottom: 20px;
-
+  margin-bottom: 2px;
+  width: 50%;
   select {
     width: 100%;
     padding: 8px;
@@ -20,6 +26,7 @@
 }
 
 .target-currencies-selector {
+  width: 50%;
   h3 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -30,7 +37,24 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 4px;
+  margin-top: 5px;
+}
+.selected-currencies-container {
+  display: flex;
+  // width: 57em;
+  justify-content: flex-end;
+}
+.label-input-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  // display: flex;
+  margin-top: 1em;
+  label {
+    font-weight: bold;
+  }
 }
 
 .currency-chip {
@@ -60,11 +84,18 @@
   display: flex;
   gap: 10px;
 
+  .compared-currency {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   select {
     flex: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
+    margin-top: 5px;
   }
 
   button {
