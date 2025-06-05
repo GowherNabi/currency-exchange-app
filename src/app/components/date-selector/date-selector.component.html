@@ -1,0 +1,11 @@
+<div class="date-selector">
+  <label for="exchangeDate">Select End Date (last 90 days):</label>
+  <input
+    type="date"
+    id="exchangeDate"
+    [value]="selectedDate() | date : 'yyyy-MM-dd'"
+    [max]="maxDate"
+    [min]="minDate"
+    (change)="onDateChange($event)"
+  />
+</div>

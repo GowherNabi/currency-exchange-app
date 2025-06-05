@@ -1,0 +1,45 @@
+<div class="currency-selector">
+  <div class="base-currency-selector">
+    <label for="baseCurrency">Base Currency:</label>
+    <select
+      id="baseCurrency"
+      [ngModel]="baseCurrency()"
+      (ngModelChange)="onBaseCurrencyChange($event)"
+    >
+      @for (currency of allCurrencies; track currency.code) {
+      <option [value]="currency.code">
+        {{ currency.code }} - {{ currency.name }}
+      </option>
+      }
+    </select>
+  </div>
+
+  <div class="target-currencies-selector">
+    <h3>Selected Currencies ({{ selectedCurrencies().length }}/7)</h3>
+    <div class="selected-currencies">
+      @for (currencyCode of selectedCurrencies(); track currencyCode) {
+      <div class="currency-chip">
+        {{ currencyCode }}
+        <button (click)="onRemoveCurrency(currencyCode)">×</button>
+      </div>
+      }
+    </div>
+
+    <div class="add-currency">
+      <select [(ngModel)]="newCurrency">
+        <option value="">Select a currency to add</option>
+        @for (currency of availableCurrencies; track currency.code) {
+        <option [value]="currency.code">
+          {{ currency.code }} - {{ currency.name }}
+        </option>
+        }
+      </select>
+      <button
+        (click)="onAddCurrency()"
+        [disabled]="!newCurrency || selectedCurrencies().length >= 7"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+</div>
