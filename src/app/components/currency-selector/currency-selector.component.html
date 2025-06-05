@@ -31,13 +31,6 @@
           }
         </select>
       </div>
-
-      <!-- <button
-        (click)="onAddCurrency()"
-        [disabled]="!newCurrency || selectedCurrencies().length >= 7"
-      >
-        Add
-      </button> -->
     </div>
   </div>
 </div>
@@ -47,7 +40,7 @@
     <div class="selected-currencies">
       @for (currencyCode of selectedCurrencies(); track currencyCode) {
       <div class="currency-chip">
-        {{ currencyCode }}
+        {{ currencyCode.toUpperCase() }}
         <button (click)="onRemoveCurrency(currencyCode)">×</button>
       </div>
       }

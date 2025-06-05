@@ -32,6 +32,7 @@
   <app-exchange-rates-table
     [exchangeRates]="exchangeRates()"
     [targetCurrencies]="targetCurrencies()"
+    (sortChange)="sortRates($event.column, $event.direction)"
   >
   </app-exchange-rates-table>
 </div>

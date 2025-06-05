@@ -85,4 +85,23 @@ export class AppComponent {
         },
       });
   }
+  sortRates(column: string, direction: 'asc' | 'desc'): void {
+    const rates = [...this.exchangeRates()];
+
+    rates.sort((a, b) => {
+      let valueA, valueB;
+
+      if (column === 'date') {
+        valueA = a.date.getTime();
+        valueB = b.date.getTime();
+      } else {
+        valueA = a.rates[column.toLowerCase()] || 0;
+        valueB = b.rates[column.toLowerCase()] || 0;
+      }
+
+      return direction === 'asc' ? valueA - valueB : valueB - valueA;
+    });
+
+    this.exchangeRates.set(rates);
+  }
 }
