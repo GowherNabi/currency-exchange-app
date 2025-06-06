@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; // <-- import this
 import { AppComponent } from './app.component';
 import { ExchangeRateService } from './services/exchange-rate.service';
 import { of } from 'rxjs';
@@ -15,7 +16,10 @@ describe('AppComponent', () => {
     mockExchangeRateService.getExchangeRatesForWeek.and.returnValue(of([]));
 
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        AppComponent,
+        HttpClientTestingModule, // <-- add this here
+      ],
       providers: [
         { provide: ExchangeRateService, useValue: mockExchangeRateService },
       ],
