@@ -1,29 +1,5 @@
 @if (exchangeRates().length > 0) {
 <div class="exchange-rates-table">
-  <!-- <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        @for (currency of targetCurrencies(); track currency) {
-        <th>{{ currency | uppercase }}</th>
-        }
-      </tr>
-    </thead>
-    <tbody>
-      @for (rate of exchangeRates(); track rate.date) {
-      <tr>
-        <td>{{ rate.date | date : "MMM d, y" }}</td>
-        @for (currency of targetCurrencies(); track currency) {
-        <td>
-          @if (getRate(rate, currency); as value) {
-          {{ value | number : "1.2-4" }}
-          } @else { - }
-        </td>
-        }
-      </tr>
-      }
-    </tbody>
-  </table> -->
   <table>
     <thead>
       <tr>
