@@ -55,7 +55,7 @@ export class AppComponent {
     this.loadExchangeRates();
   }
 
-  private loadExchangeRates(): void {
+  loadExchangeRates(): void {
     this.loading.set(true);
     this.error.set(null);
     this.exchangeRates.set([]);
